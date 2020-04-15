@@ -1,10 +1,21 @@
 ## Using TFLite instead uTensor
 
+<https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page>
 ```
 git clone https://github.com/tensorflow/tensorflow.git
 ```
-<https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page>
 
+### Install curl and unzip in Docker
+```
+apt-get update
+apt-get -y install curl
+apt-get install unzip
+```
+Compile "hello world" example
+```
+make -f tensorflow/lite/micro/tools/make/Makefile  TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
+
+```
 ### TFlite uses  C++11 compiler, but Mbedos uses C++98
 
 ```
@@ -25,7 +36,7 @@ for filename in glob.glob("mbed-os/tools/profiles/*.json"):
 ```
 ###  make version
 
-TFLite Requires make version 3.82 or later.
+TFLite requires the make version 3.82 or later.
 On Mac you can use gmake:
 ```
 brew install gmake
