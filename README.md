@@ -5,6 +5,15 @@
 git clone https://github.com/tensorflow/tensorflow.git
 ```
 
+###  make version
+
+TFLite requires the make version 3.82 or later.
+On Mac you can use gmake:
+```
+brew install gmake
+```
+
+### Compile mbed project
 ### Install curl and unzip in Docker
 ```
 apt-get update
@@ -14,7 +23,7 @@ apt-get install unzip
 Compile "hello world" example
 ```
 make -f tensorflow/lite/micro/tools/make/Makefile  TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
-
+cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/hello_world/mbed
 ```
 ### TFlite uses  C++11 compiler, but Mbedos uses C++98
 
@@ -34,12 +43,11 @@ for filename in glob.glob("mbed-os/tools/profiles/*.json"):
     print (line.replace("\"-std=gnu++98\"","\"-std=c++11\", \"-fpermissive\""))'
 
 ```
-###  make version
-
-TFLite requires the make version 3.82 or later.
-On Mac you can use gmake:
+### Compile mbed project
 ```
-brew install gmake
+mbed compile -m DISCO_F746NG -t GCC_ARM 
+
+ls ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin 
 ```
 
 ## Configuring TD connection
