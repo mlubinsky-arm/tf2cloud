@@ -13,14 +13,19 @@ On Mac you can use gmake:
 brew install gmake
 ```
 
-### Compile mbed project
 ### Install curl and unzip in Docker
 ```
 apt-get update
 apt-get -y install curl
 apt-get install unzip
 ```
-Compile "hello world" example
+### Compile "hello world" example
+ Documentation (master):
+<https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/hello_world/#deploy-to-stm32f746>
+
+ Documentation (experimental)
+<https://github.com/tensorflow/tensorflow/tree/v2.1.0/tensorflow/lite/experimental/micro/examples/hello_world#deploy-to-stm32f746>
+
 ```
 (g)make -f tensorflow/lite/micro/tools/make/Makefile  TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
 ```
