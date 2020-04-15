@@ -13,11 +13,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/examples/hello_world/main_functions.h"
+#include "main_functions.h"
 
-#include "tensorflow/lite/micro/examples/hello_world/constants.h"
-#include "tensorflow/lite/micro/examples/hello_world/output_handler.h"
-#include "tensorflow/lite/micro/examples/hello_world/sine_model_data.h"
+#include "constants.h"
+#include "output_handler.h"
+#include "sine_model_data.h"
 #include "tensorflow/lite/micro/kernels/all_ops_resolver.h"
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"

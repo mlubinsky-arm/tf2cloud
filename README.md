@@ -1,5 +1,35 @@
 ## Using TFLite instead uTensor
 
+```
+git clone https://github.com/tensorflow/tensorflow.git
+```
+<https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page>
+
+### TFlite uses  C++11 compiler, but Mbedos uses C++98
+
+```
+find . -name "*.json" | xargs grep "std=gnu++98"
+
+./profiles/debug_size.json:        "cxx": ["-std=gnu++98", "-fno-rtti", "-Wvla"],
+./profiles/debug_size.json:        "cxx": ["-fno-rtti", "-std=gnu++98"],
+./profiles/size.json:        "cxx": ["-std=gnu++98", "-fno-rtti", "-Wvla"],
+./profiles/size.json:        "cxx": ["-fno-rtti", "-std=gnu++98"],
+```
+Let update compiler version in Mbedos tooling to C++11:
+```
+python -c 'import fileinput, glob;
+for filename in glob.glob("mbed-os/tools/profiles/*.json"):
+  for line in fileinput.input(filename, inplace=True):
+    print (line.replace("\"-std=gnu++98\"","\"-std=c++11\", \"-fpermissive\""))'
+
+```
+###  make version
+
+TFLite Requires make version 3.82 or later.
+On Mac you can use gmake:
+```
+brew install gmake
+```
 
 ## Configuring TD connection
 Make sure you have TD account: https://console.treasuredata.com/
