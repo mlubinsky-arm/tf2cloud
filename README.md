@@ -43,12 +43,15 @@ for filename in glob.glob("mbed-os/tools/profiles/*.json"):
     print (line.replace("\"-std=gnu++98\"","\"-std=c++11\", \"-fpermissive\""))'
 
 ```
-### Compile mbed project
+### Compile mbed hello_word project
 ```
 mbed compile -m DISCO_F746NG -t GCC_ARM 
 
 ls ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin 
 ```
+### Modify source code 
+
+./lite/micro/examples/hello_world/disco_f746ng/
 
 ## Configuring TD connection
 Make sure you have TD account: https://console.treasuredata.com/
