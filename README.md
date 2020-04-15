@@ -1,8 +1,12 @@
 ## Using TFLite instead uTensor
 
+<https://gitter.im/tensorflow/sig-micro>
+
+
 <https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page>
 ```
 git clone https://github.com/tensorflow/tensorflow.git
+cd tensorflow
 ```
 
 ###  make version
