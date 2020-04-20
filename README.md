@@ -30,8 +30,20 @@ apt-get install unzip
  Documentation (experimental)
 <https://github.com/tensorflow/tensorflow/tree/v2.1.0/tensorflow/lite/experimental/micro/examples/hello_world#deploy-to-stm32f746>
 
+<https://www.tensorflow.org/lite/microcontrollers/library>
+
+target boards:
+<https://github.com/ARMmbed/mbed-os/tree/master/targets/TARGET_Cypress/TARGET_PSOC6/TARGET_CY8CPROTO_062_4343W>
+
 ```
-(g)make -f tensorflow/lite/micro/tools/make/Makefile  TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
+BOARD in lower case here:
+
+gmake -f tensorflow/lite/experimental/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS cy8cproto_062_4343w" generate_hello_world_mbed_project
+
+gmake -f tensorflow/lite/experimental/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS <lowercase_boardt>" generate_hello_world_mbed_project
+
+gmake -f tensorflow/lite/micro/tools/make/Makefile  TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
+
 ```
 Outcome:
 ```
