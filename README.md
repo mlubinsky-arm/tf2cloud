@@ -38,9 +38,9 @@ target boards:
 ```
 BOARD in lower case here:
 
-gmake -f tensorflow/lite/experimental/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS cy8cproto_062_4343w" generate_hello_world_mbed_project
+gmake -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS cy8cproto_062_4343w" generate_hello_world_mbed_project
 
-gmake -f tensorflow/lite/experimental/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS <lowercase_boardt>" generate_hello_world_mbed_project
+gmake -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS <lowercase_boardt>" generate_hello_world_mbed_project
 
 gmake -f tensorflow/lite/micro/tools/make/Makefile  TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
 
